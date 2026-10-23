@@ -404,6 +404,7 @@ def create_app() -> FastAPI:
     # Fix MIME types for Windows (registry defaults .js to text/plain)
     mimetypes.add_type("application/javascript", ".js")
     mimetypes.add_type("text/css", ".css")
+    mimetypes.add_type("application/manifest+json", ".webmanifest")
 
     web_build = settings.root / "web" / "dist"
     if web_build.exists():
